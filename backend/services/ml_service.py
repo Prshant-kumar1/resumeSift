@@ -50,7 +50,7 @@ class MLService:
             return ""
         text = str(text).lower()
         text = re.sub(r'https?://\S+|www\.\S+', '', text)     # strip URLs
-        text = re.sub(r'[\w.+-]+@[\w-]+\.[a-z]{2,}', '', text)  # strip emails
+        text = " ".join(token for token in text.split() if "@" not in token)  # strip email-like tokens
         text = re.sub(r'[^a-zA-Z0-9\s+#-]', ' ', text)        # keep alphanum + tech symbols
         text = ' '.join(text.split())
         return text

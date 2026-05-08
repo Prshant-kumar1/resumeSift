@@ -261,8 +261,11 @@ async def screen_batch_resumes(
         
     except HTTPException:
         raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error processing CSV: {str(e)}")
+    except Exception:
+        raise HTTPException(
+            status_code=500,
+            detail="Error processing CSV. Please check server logs for details.",
+        )
 
 
 @router.get(
