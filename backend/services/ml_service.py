@@ -150,7 +150,8 @@ class MLService:
                 "model": self.model_name,
             }
         except Exception as e:
-            return {"error": f"Prediction error: {str(e)}"}
+            print(f"Prediction error: {e}")
+            return {"error": "Prediction failed. Please check server logs."}
 
     # ── Efficient batch prediction ─────────────────────────────────────────────
 
@@ -224,7 +225,8 @@ class MLService:
             return results
 
         except Exception as e:
-            return [{"error": f"Batch prediction error: {str(e)}"}] * len(resumes)
+            print(f"Batch prediction error: {e}")
+            return [{"error": "Batch prediction failed. Please check server logs."}] * len(resumes)
 
 
 # ── Singleton ──────────────────────────────────────────────────────────────────
