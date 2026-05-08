@@ -1,0 +1,11 @@
+{
+  "name": "resume-sift-monorepo",
+  "private": true,
+  "scripts": {
+    "frontend:install": "npm --prefix frontend install",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "frontend:lint": "npm --prefix frontend run lint",
+    "backend:dev": "cd backend && uvicorn main:app --reload --port 8000"
+  }
+}

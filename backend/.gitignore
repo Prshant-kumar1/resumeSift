@@ -1,0 +1,19 @@
+# Virtual environments
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Model files (large, track with Git LFS or download separately)
+# models/*.pkl
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+.vercel
+.env*.local
